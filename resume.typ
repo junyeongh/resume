@@ -22,12 +22,6 @@
 
 #show link: set text(fill: blue, weight: 700)
 
-// custom function
-#let section(title) = {
-  heading(level: 1, title)
-  block(line(length: 100%), below: 0.5em)
-}
-
 // Content sections
 #align(center)[
   #text([*Junyeong Heo*], size: 12pt) \
@@ -36,7 +30,8 @@
   yeong.heo\@outlook.com | (HK) +852 5237-0535 | (KR) +82 10-3872-0535\
 ]
 
-#section("Education")
+= Education
+#block(line(length: 100%), below: 0.5em)
 
 *City University of Hong Kong* #h(1fr) Hong Kong SAR\
 B. E. in Computer and Data Engineering, Department of Electrical Engineering #h(1fr) September 2019 - June 2025\
@@ -45,7 +40,8 @@ _Coursework: Cloud Computing Systems, Database Systems, Big Data, and Human-Comp
 Study abroad coursework in the School of Engineering #h(1fr) January 2024 - May 2024\
 _Coursework: Applied Machine Learning, Artificial Intelligence, FPGA Design, and Programming Languages_
 
-#section("Technical Skills")
+= Technical Skills
+#block(line(length: 100%), below: 0.5em)
 
 #grid(
   columns: (1fr, 3fr),
@@ -69,7 +65,8 @@ _Coursework: Applied Machine Learning, Artificial Intelligence, FPGA Design, and
   ),
 )
 
-#section("Professional Experience")
+= Professional Experience
+#block(line(length: 100%), below: 0.5em)
 
 *MotoNerv Limited* #h(1fr) Hong Kong SAR\
 _Hardware (Embedded Systems) Engineering Intern_ #h(1fr) June 2023 - August 2023\
@@ -77,7 +74,8 @@ _Hardware (Embedded Systems) Engineering Intern_ #h(1fr) June 2023 - August 2023
 - Preprocessed on-car sensor and location data tailored for AI video analytics in the AWS cloud environment
 - Implemented data pipeline to stream sensor and video data directly to AWS S3 buckets for further processing via celluar network connection
 
-#section("Projects")
+= Projects
+#block(line(length: 100%), below: 0.5em)
 
 *RunFit* #h(1fr) #link("https://run-fit-eight.vercel.app/")[#box(image("icons/house.svg", height: 1em, width: 1em))] #h(0.5em) #link("https://github.com/fesi12-team1/run-fit/")[#box(image("icons/github.svg", height: 1em, width: 1em))]\
 _Running crew matching platform with location-based filtering and pace-based discovery_
@@ -103,7 +101,8 @@ _cross-platform mobile social networking application for community interaction_
 - Integrated NestJS backend API using TanStack Query for state management and real-time data synchronization
 - Developed cross-platform UI with push notifications and multi-language support (i18n) for enhanced user engagement
 
-#section("Leadership Activities & Other Experiences")
+= Leadership Activities & Other Experiences
+#block(line(length: 100%), below: 0.5em)
 
 *Frontend Short-Term Intensive Course - codeit* #h(1fr) November 2025 - January 2026\
 - Completed 10-week intensive program covering modern frontend development practices including Jest/React Testing Library, CI/CD pipelines, and Next.js architecture patterns
