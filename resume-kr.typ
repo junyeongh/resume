@@ -29,6 +29,7 @@
   ),
 
   text(
+    lang: "ko",
     align(
       right,
     )[잘 설계된 도구를 탐구하고, 도구가 사용자에게 더 잘 전달될 수 있도록 개선하는 방법을 고민합니다.\ 그런 제품을 만들기 위한 팀의 가치를 이해하고, 개선할 수 있는 부분을 찾아 함께 발전시켜 나갑니다.],
@@ -60,9 +61,9 @@
 
 처음 프로그래밍을 접한 건 수업 자료를 정리하기 위한 간단한 스크립트였지만, 그 과정에서 로직을 설계하고 자동화의 효율을 경험하는 것에 매력을 느끼며 개발에 관심을 가졌습니다.
 
-다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정에서 문제 해결의 지적 즐거움을 느낍니다. 동시에 같은 관심사를 가진 사람들과 교류하며 새로운 관점을 배워 나가며 그런 지적 즐거움을 팀과 함께 나눌 수 있는 환경에서 성장해 나가겠습니다.
+다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정에서 문제 해결의 지적 즐거움을 느끼는 동시에, 관심사를 공유하는 사람들과 교류하며 새로운 관점과 지식을 배워 나가는 것을 즐깁니다. 그런 지적 즐거움을 팀과 함께 나눌 수 있는 환경을 만들어 나가고 함께 성장하는 것에 열정이 있습니다.
 
-저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 전체 구조나 개발 환경의 일관성을 설계하고 팀에 공유했던 경험처럼, 궁극적으로는 여러 층위에서 다른 사람의 반복 작업을 줄일 수 있는 개발자가 되고 싶습니다.
+저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 구조 설계와 개발 환경 일관성을 확립하고, 트레이드오프 결정의 배경을 팀과 공유해 온 경험을 바탕으로, 궁극적으로는 개발 사이클 전반에서 프로젝트 아키텍처부터 개발 환경·인프라까지 고려해 팀의 반복 작업을 줄이는 개발자가 되고자 합니다.
 
 #divider
 
@@ -114,19 +115,13 @@ School of Engineering 교환학생 프로그램\
 *데이터 사이언스 코칭 스터디: 2024 - 부스트코스* #h(1fr) 2024년 7월 - 2024년 8월\
 Python 데이터 분석 및 데이터 시각화 4주 과정 수료
 
-// #v(1em)
 #pagebreak()
 = 프로젝트
 
 *RunFit* #h(0.5em) #link("https://run-fit-eight.vercel.app/")[#box(image("icons/house.svg", height: 1em, width: 1em))] #h(0.5em) #link("https://github.com/fesi12-team1/run-fit/")[#box(image("icons/github.svg", height: 1em, width: 1em))] #h(1fr) 2025년 12월 - 2026년 1월\
 위치 기반 필터링과 페이스 기반 탐색 기능을 갖춘 러닝 크루 매칭 플랫폼
-#grid(
-  columns: (1fr,) * 4,
-  image("images/project-run-fit-mock-1.png"),
-  image("images/project-run-fit-mock-2.png"),
-  image("images/project-run-fit-mock-3.png"),
-  image("images/project-run-fit-mock-4.png"),
-)
+
+#box(image("images/project-run-fit.png"))
 
 - Next.js 서버 프록시 레이어를 설계하여 API 요청/응답 제어를 중앙화하고 백엔드 엔드포인트 노출 방지
 - Next.js App Router의 서버/클라이언트 컴포넌트 간 JWT 인증 흐름 보안 취약점 분석 및 개선
@@ -138,10 +133,15 @@ Python 데이터 분석 및 데이터 시각화 4주 과정 수료
 #grid(
   columns: (1fr,) * 2,
   inset: 2pt,
-  image("images/project-squash-pipeline.png"), image("images/project-squash-architecture.png"),
+  image("images/project-squash/pipeline.png"), image("images/project-squash/architecture.png"),
 )
 
 - React와 FastAPI를 활용한 데이터 기반 코칭용 풀스택 컴퓨터 비전 파이프라인 설계 및 구현
 - 영상 처리를 위한 머신 러닝 모델 오케스트레이션 및 처리 파이프라인 담당 백엔드 구축
 - 세그멘테이션 단계 중 프레임 샘플링을 통한 forward/backward propagation 시 VRAM 사용 최적화
 - NVIDIA GPU 가속 지원 Docker 컨테이너화를 통한 배포 환경의 일관된 재현성 보장
+
+// #lorem(100)
+
+// #pagebreak()
+// = 관심사
