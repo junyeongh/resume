@@ -20,21 +20,53 @@
 #show heading.where(level: 1): set align(center)
 #show heading.where(level: 1): set block(above: 1em, below: 0.5em)
 
+#show heading.where(level: 2): set text(font: "Times New Roman", size: 11pt, weight: "medium")
+
 #show link: set text(fill: blue, weight: 700)
 
 // Content sections
-#align(center)[
-  #text(
-    {
-      show link: set text(fill: black, weight: "regular")
-      link("https://junyeongh.github.io/resume/en.pdf")[*Junyeong Heo*]
-    },
-    size: 12pt,
-  ) \
-
-  #box(image("icons/linkedin.svg", height: 1em, width: 1em)) *LinkedIn* #link("https://www.linkedin.com/in/junyeongheo/")[\@junyeongheo] | #box(image("icons/github.svg", height: 1em, width: 1em)) *GitHub* #link("https://github.com/junyeongh")[\@junyeongh]\
-  yeong.heo\@outlook.com | (HK) +852 5237-0535 | (KR) +82 10-3872-0535\
-]
+#grid(
+  columns: (1fr, 1fr),
+  align: (left + horizon, right + horizon),
+  text(size: 16pt, {
+    show link: set text(fill: black, weight: "regular")
+    link("https://junyeongh.github.io/resume/en.pdf")[*Junyeong Heo*]
+  }),
+  align(right + horizon)[
+    #grid(
+      columns: (auto, auto),
+      column-gutter: 0.5em,
+      align: horizon,
+      box[
+        #grid(
+          columns: (auto, auto),
+          align: horizon,
+          column-gutter: 0.25em,
+          box[#image("icons/linkedin.svg", height: 1em, width: 1em)],
+          box[*LinkedIn* #link("https://www.linkedin.com/in/junyeongheo/")[\@junyeongheo]],
+        )
+      ],
+      box[
+        #grid(
+          columns: (auto, auto),
+          align: horizon,
+          column-gutter: 0.25em,
+          box[#image("icons/github.svg", height: 1em, width: 1em)],
+          box[*GitHub* #link("https://github.com/junyeongh")[\@junyeongh]],
+        )
+      ],
+    )
+  ],
+)
+#grid(
+  columns: (1fr, 1fr),
+  align: (left + horizon, right + horizon),
+  {
+    show link: set text(fill: black, size: 12pt, weight: "medium")
+    link("mailto:yeong.heo@outlook.com")[yeong.heo\@outlook.com]
+  },
+  align(right + horizon)[#text(size: 12pt, weight: "medium")[(HK) +852 5237-0535 | (KR) +82 10-3872-0535]],
+)
 
 = Education
 #block(line(length: 100%), below: 0.5em)
@@ -74,53 +106,67 @@ _Coursework: Applied Machine Learning, Artificial Intelligence, FPGA Design, and
 = Professional Experience
 #block(line(length: 100%), below: 0.5em)
 
+*URJOB* #h(1fr) Seoul, South Korea\
+_Frontend Engineering Intern_ #h(1fr) March 2026 - April 2026\
+== Monorepo Migration: React + React Router Legacy to TanStack Start
+- Separated user app and admin dashboard into a pnpm workspace monorepo, sharing runtime and design tokens
+- Established project conventions (file-based routing) and an agentic coding harness for the new stack
+- Replaced `localStorage`-backed JWT with `HttpOnly` + `SameSite: Lax` cookies, closing the XSS token-theft path
+- Adopted TanStack Query as the session single source of truth and defined the access-token refresh policy
+== Developer Experience Improvements
+- Generated TypeScript types from the backend Spring OpenAPI spec via `openapi-typescript`, catching contract drift at compile time
+- Centralized TypeScript versioning via pnpm catalog and unified query keys with a Query Factory pattern
+- Enforced pre-commit/push formatting and lint (`oxfmt`/`oxlint`) and commit conventions (Commitlint) via Lefthook
+== Deployment Pipeline & Infrastructure
+- Designed a reusable `workflow_call`-based GitHub Actions architecture separating CI (lint/test), Build, and Deploy across develop, preview, and production environments
+- Moved Dockerfile-based EC2 builds into GitHub Actions, shipping only the `.output` artifact to minimize runtime image size and remove instance build load
+
 *MotoNerv Limited* #h(1fr) Hong Kong SAR\
 _Hardware (Embedded Systems) Engineering Intern_ #h(1fr) June 2023 - August 2023\
-- Developed a prototype of an MCU-based (ESP32) dashcam for streaming video and collected sensor data
+- Developed a prototype of an MCU-based (ESP32) dashcam for streaming video and collecting sensor data
 - Preprocessed on-car sensor and location data tailored for AI video analytics in the AWS cloud environment
-- Implemented data pipeline to stream sensor and video data directly to AWS S3 buckets for further processing via celluar network connection
+- Implemented data pipeline to stream sensor and video data directly to AWS S3 buckets for further processing via cellular network connection
 
 = Projects
 #block(line(length: 100%), below: 0.5em)
 
 *RunFit* #h(1fr) #link("https://run-fit-eight.vercel.app/")[#box(image("icons/house.svg", height: 1em, width: 1em))] #h(0.5em) #link("https://github.com/fesi12-team1/run-fit/")[#box(image("icons/github.svg", height: 1em, width: 1em))]\
 _Running crew matching platform with location-based filtering and pace-based discovery_
-- Designed domain-based REST API structure where request/response bodies are typed subsets of core domain models, ensuring consistency across iterative requirement changes
-- Bridged frontend planning with backend implementation by establishing flexible DTO patterns that accommodate evolving product requirements
-- Architected Next.js proxy layer for all API requests to centralize request/response control, preventing backend endpoint exposure and mitigating security vulnerabilities in JWT-based authentication flow
-- Implemented JWT authentication with httpOnly cookies and role-based access control (RBAC), addressing server/client component authentication in Next.js App Router environment
-- Integrated TanStack Query with custom factory patterns for queries/mutations and structured error handling strategy across data fetching layers
+- Designed a domain-based REST API structure with typed DTO request/response bodies, standardizing the frontend–backend interface contract across a 4-person team through iterative requirement changes
+- Architected a Next.js server proxy layer to centralize API request/response control, preventing backend endpoint exposure and closing JWT token-handling vulnerabilities across App Router server/client component boundaries
+- Implemented role-based access control (RBAC) with httpOnly cookie-backed JWT, addressing secure session state across server and client components in Next.js App Router
+- Integrated TanStack Query with custom factory patterns for queries/mutations, establishing a structured error handling strategy across all data fetching layers
 
 *Squash Motion Tracking* (Final Year Project) #h(1fr) #link("https://github.com/junyeongh/Squash-Phase-Detect-Preprocess")[#box(image("icons/github.svg", height: 1em, width: 1em))]\
 _Participated in Hong Kong Sport Institute (HKSI) initiated computer vision project for athlete performance analysis_
-- Architected a full-stack computer vision pipeline using FastAPI to track player movements and detect poses from match videos, enabling data-driven coaching insights
-- Integrated a processing pipeline, including video processing and orchestration of ML models (SAM2 and YOLO) via REST API to the backend
-- Optimized memory usage by implementing frame sampling for transformer-based segmentation, reducing VRAM consumption during forward/backward propagation
-- Containerized the system using Docker and Docker-Compose, enabling reproducible and portable deployment with support for NVIDIA GPU acceleration for optimal model performance
+- Architected a full-stack computer-vision pipeline (FastAPI + React) for player tracking and pose detection from match video, enabling data-driven coaching
+- Orchestrated SAM2 and YOLO model inference behind a REST API for video processing
+- Reduced VRAM during transformer-based segmentation via frame sampling on forward/backward propagation
+- Containerized the system with Docker / Docker Compose for reproducible deployment with NVIDIA GPU acceleration
 
-#pagebreak()
-
-*Avatar community application* #h(1fr) #link("https://github.com/junyeongh/avatar-community")[#box(image("icons/github.svg", height: 1em, width: 1em))]\
-_cross-platform mobile social networking application for community interaction_
-- Built a social media app using React Native with Expo, featuring tab-based navigation and interactive social feeds
-- Implemented user authentication, post creation, and social interactions with type-safe form validation using React Hook Form and Zod schemas
-- Integrated NestJS backend API using TanStack Query for state management and real-time data synchronization
-- Developed cross-platform UI with push notifications and multi-language support (i18n) for enhanced user engagement
+// *Avatar Community Application* #h(1fr) #link("https://github.com/junyeongh/avatar-community")[#box(image("icons/github.svg", height: 1em, width: 1em))]\
+// _Cross-platform mobile social networking application for community interaction_
+// - Built a React Native (Expo) social app with tab-based navigation and interactive feeds
+// - Implemented auth, post creation, and social interactions with React Hook Form + Zod for type-safe validation
+// - Integrated a NestJS backend via TanStack Query for state management and real-time data sync
+// - Delivered cross-platform UI with push notifications and multi-language support (i18n)
 
 = Leadership Activities & Other Experiences
 #block(line(length: 100%), below: 0.5em)
 
 *Frontend Short-Term Intensive Course - codeit* #h(1fr) November 2025 - January 2026\
-- Completed 10-week intensive program covering modern frontend development practices including Jest/React Testing Library, CI/CD pipelines, and Next.js architecture patterns
-- Established team development workflows by defining code conventions, PR templates, and collaborative review processes for a 4-person team project
-- Led technical architecture decisions for API structure, authentication flows, and state management patterns in a production-grade running crew platform
+- Completed 10-week intensive covering Jest/React Testing Library, CI/CD pipelines, and Next.js architecture patterns
+- Established team workflows by defining code conventions, PR templates, and review processes for a 4-person team
+- Led architecture decisions for API structure, auth flows, and state management in a production-grade running crew platform
 *Data Science Coaching Study: 2024 - boostcourse* #h(1fr) July - August 2024\
-- Completed 4-week program on Python data analysis covering pandas, numpy, and data visualization libraries (matplotlib, seaborn, plotly)
-- Practiced exploratory data analysis techniques including correlation analysis, pivot tables, and statistical visualization on real-world datasets from KOSIS (Korean Statistical Information Service)
+- Completed 4-week program on Python data analysis covering pandas, numpy, and visualization libs (matplotlib, seaborn, plotly)
+- Practiced EDA techniques including correlation analysis, pivot tables, and statistical visualization on real-world KOSIS datasets
 *Student Resident (Senior Resident Tutor)* #h(1fr) July 2024 - July 2025\
+- Provided academic mentoring and pastoral support to resident students; coordinated hall community events and welfare programs
 *Student Resident Cabinet (General Officer)* #h(1fr) October 2022 - May 2023\
+- Contributed to student welfare initiatives and community programs as a student government officer
 *Military service* #h(1fr) August 2020 - February 2022\
+- Completed mandatory Republic of Korea military service
 *Private Tutoring*\
-- International Baccalaureate (IB) Diploma Programme (DP) - Mathematics
-- Electrical Engineering
+- Taught International Baccalaureate (IB) Diploma Mathematics and Electrical Engineering to secondary and university-level students
 
