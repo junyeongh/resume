@@ -110,13 +110,12 @@ _Coursework: Applied Machine Learning, Artificial Intelligence, FPGA Design, and
 _Frontend Engineering Intern_ #h(1fr) March 2026 - April 2026\
 == Monorepo Migration: React + React Router Legacy to TanStack Start
 - Separated user app and admin dashboard into a pnpm workspace monorepo, sharing runtime and design tokens
-- Established project conventions (file-based routing) and an agentic coding harness for the new stack
-- Replaced `localStorage`-backed JWT with `HttpOnly` + `SameSite: Lax` cookies, closing the XSS token-theft path
-- Adopted TanStack Query as the session single source of truth and defined the access-token refresh policy
+- Replaced `localStorage`-backed JWT with `HttpOnly` + `SameSite` cookies to mitigate XSS and CSRF attack vectors
+- Integrated TanStack Query as the session source of truth and defined the access-token refresh policy
 == Developer Experience Improvements
-- Generated TypeScript types from the backend Spring OpenAPI spec via `openapi-typescript`, catching contract drift at compile time
-- Centralized TypeScript versioning via pnpm catalog and unified query keys with a Query Factory pattern
-- Enforced pre-commit/push formatting and lint (`oxfmt`/`oxlint`) and commit conventions (Commitlint) via Lefthook
+- Established project conventions and an agentic coding harness, enforcing formatting, lint, and commit standards via Lefthook to onboard developers and AI agents consistently
+- Generated TypeScript types from the OpenAPI spec to eliminate contract drift at compile time
+- Unified query keys and mutations via a Query/Mutation Factory for predictable cache invalidation across the project
 == Deployment Pipeline & Infrastructure
 - Designed a reusable `workflow_call`-based GitHub Actions architecture separating CI (lint/test), Build, and Deploy across develop, preview, and production environments
 - Moved Dockerfile-based EC2 builds into GitHub Actions, shipping only the `.output` artifact to minimize runtime image size and remove instance build load

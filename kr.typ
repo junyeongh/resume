@@ -60,9 +60,14 @@
 #divider
 = 자기 소개
 
-좋은 도구를 만들기 위해 다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정을 즐깁니다. 그 과정에서 일어나는 여러 층위의 문제를 해결하며 지적 즐거움을 느낍니다. 동시에 같은 즐거움을 나눌 수 있는 사람들의 서로 다른 관점과 새로운 지식을 배워 나가며 함께 성장하는 것에 열정적입니다..
+#text(
+  size: 10pt,
+  [
+    좋은 도구를 만들기 위해 다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정을 즐깁니다. 그 과정에서 일어나는 여러 층위의 문제를 해결하며 지적 즐거움을 느낍니다. 동시에 같은 즐거움을 나눌 수 있는 사람들의 서로 다른 관점과 새로운 지식을 배워 나가며 함께 성장하는 것에 열정적입니다.
 
-저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 구조 설계와 개발 환경 일관성을 확립하고, 기술적 결정의 배경을 팀과 공유해 온 경험을 바탕으로, 궁극적으로는 개발 사이클 전반에서 프로젝트 아키텍처부터 개발 환경·인프라까지 고려해 팀의 반복 작업을 줄이는 개발자가 되고자 합니다.
+    저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 구조 설계와 개발 환경 일관성을 확립하고, 기술적 결정의 배경을 팀과 공유해 온 경험을 바탕으로, 궁극적으로는 개발 사이클 전반에서 프로젝트 아키텍처부터 개발 환경·인프라까지 고려해 팀의 반복 작업을 줄이는 개발자가 되고자 합니다.
+  ],
+)
 
 // == 관심사
 // - 개발 경험 (DX) 개선: 개발 환경 및 인프라의 선언적 환경 구축 - Nix, IaC
@@ -91,34 +96,20 @@
 )
 
 #divider
-
-= 학력
-
-*홍콩 시티대학교* #h(1fr) 홍콩\
-전기공학부 컴퓨터·데이터공학 학사 #h(1fr) 2019년 9월 - 2025년 6월\
-_이수 과목: 클라우드 컴퓨팅 시스템, 데이터베이스 시스템, 빅데이터, 인간-컴퓨터 상호작용_\
-*밴더빌트 대학교* #h(1fr) 미국 테네시주 내슈빌\
-공과대학 교환학생 #h(1fr) 2024년 1월 - 2024년 5월\
-_이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 언어론_
-
-#divider
-
 // #pagebreak()
 = 경력
 
 *유어잡(URJOB), 서울* - _프론트엔드 인턴_ #h(1fr) 2026년 3월 - 2026년 4월\
 == React + React Router 레거시 시스템의 TanStack Start 기반 모노레포 마이그레이션 기획
-- 사용자 앱과 관리자 대시보드를 분리 후 pnpm workspace 모노레포 구성\ (런타임 및 디자인 토큰 공통화)
-- File-based routing을 포함한 프로젝트 컨벤션 및 Agentic coding harness 구축
-- JWT + Session 혼합 방식의 기존 인증/인가의 `localStorage` 내 저장된 `access token`을 `HttpOnly` + `SameSite: Lax` cookie로 개편하여 XSS 토큰 탈취 경로 차단
-- TanStack Query의 쿼리키를 활용하여 세션 단일 진실 소스로 채택 및 access token 갱신 정책 수립
+- 기존 인증/인가의 `localStorage` 내 저장된 `access token` 사용과 페이지별 JWT와 Session 전략이 혼합되어 사용되던 방식을 `HttpOnly` + `SameSite` cookie로 개편하여 XSS 및 CSRF 공격 벡터 완화
+- TanStack Query를 세션 단일 진실 소스로 채택 및 access token 갱신 정책 수립
 == 프로젝트 개발 환경 및 경험 개선
-- `openapi-typescript`로 백엔드 Spring OpenAPI 스펙에서 타입을 자동 생성하여 프론트-백엔드 계약 불일치를 컴파일 타임에 차단
-- pnpm catalog로 TypeScript 버전을 모노레포 전체에서 중앙화, Query Factory 패턴으로 query key 관리 일원화
-- Lefthook로 pre-commit/pre-push 상황에서 포매터·린터 (`oxfmt`·`oxlint`) 및 커밋 메시지 규약 강제 (Commitlint)
+- Lefthook으로 포매팅·린트·커밋 규약을 강제하는 프로젝트 컨벤션 및 Agentic coding harness\ 구축으로 개발자와 AI 에이전트의 일관된 온보딩 환경 구성
+- `openapi-typescript`를 통한 OpenAPI 스펙에서 자동 생성된 타입으로 프론트-백엔드 간 불일치를\ 컴파일 타임에 차단
+- Query/Mutation Factory 패턴으로 쿼리키와 설정을 통합 관리를 통한 일관적인 캐시 관리 구현
 == 프로젝트 배포 파이프라인 및 인프라 개선
-- `workflow_call` 기반 CI(lint/test) · Build · Deploy 워크플로우 관심사 분리 후 develop/preview/production 환경별 상이한  조건의 파이프라인 구성하여 재사용 가능한 GitHub Actions 아키텍처 설계
-- Dockerfile를 사용한 EC2 인스턴트 내 빌드 단계를 GitHub Actions로 이관하여 빌드 산출물 `.output`만 복사로 런타임 이미지 크기 최소화 및 EC2 인스턴스 빌드 부하 제거
+- EC2 인스턴트 내 Dockerfile를 통한 수동 빌드 및 배포 단계를 GitHub Actions로 이관하여\ 런타임 이미지 크기 최소화 및 EC2 인스턴스 빌드 부하 제거를 통한 배포 과정 개선
+- `workflow_call` 기반의 재사용 가능한 CI(lint/test) · Build · Deploy 워크플로우 분리 후 develop/preview/production 환경별 상이한 조건의 파이프라인 구성한 아키텍처 설계
 
 *MotoNerv Limited, 홍콩* - _하드웨어(임베디드 시스템) 엔지니어링 인턴_ #h(1fr) 2023년 6월 - 2023년 8월\
 - MCU 기반 (ESP32) 블랙박스 프로토타입 개발, 영상 스트리밍 및 센서 데이터 수집 기능 구현
@@ -138,7 +129,6 @@ _이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 
 - 도메인 기반 REST API 구조 및 DTO 패턴을 설계하여 프론트엔드-백엔드 간 인터페이스 표준화
 - TanStack Query 기반 커스텀 팩토리 패턴을 적용하여 데이터 페칭 및 에러 핸들링 체계화
 
-#pagebreak()
 *Squash Motion Tracking* (졸업 프로젝트) #h(0.5em) #link("https://github.com/junyeongh/Squash-Phase-Detect-Preprocess")[#box(image("icons/github.svg", height: 1em, width: 1em))] #h(1fr) 2024년 9월 - 2025년 4월\
 스쿼시 선수 퍼포먼스 분석을 경기 영상 기반 동작 추적 및 자세 감지 컴퓨터 비전 프로젝트
 #grid(
@@ -159,7 +149,14 @@ _이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 
 // - TanStack Query로 NestJS 백엔드 API 연동 및 실시간 데이터 동기화 처리
 // - 푸시 알림과 다국어(i18n) 지원을 갖춘 크로스 플랫폼 UI 구현
 
-// #lorem(100)
+= 학력
+
+*홍콩 성시대학교* #h(1fr) 홍콩\
+전기공학부 컴퓨터·데이터공학 학사 #h(1fr) 2019년 9월 - 2025년 6월\
+_이수 과목: 클라우드 컴퓨팅 시스템, 데이터베이스 시스템, 빅데이터, 인간-컴퓨터 상호작용_\
+*밴더빌트 대학교* #h(1fr) 미국 테네시주 내슈빌\
+공과대학 교환학생 #h(1fr) 2024년 1월 - 2024년 5월\
+_이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 언어론_
 
 #divider
 

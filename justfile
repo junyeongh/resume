@@ -1,9 +1,9 @@
-compile:
+compile-en:
   #!/usr/bin/env bash
   year=$(date +%Y)
   typst compile en.typ "Resume - Junyeong Heo ($year).pdf"
 
-watch:
+watch-en:
   typst watch en.typ
 
 compile-kr:
