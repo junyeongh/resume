@@ -21,6 +21,7 @@
 // Content sections
 #grid(
   columns: (1fr, 4fr),
+  align: horizon,
   text(
     {
       show link: set text(fill: black, weight: "regular")
@@ -29,45 +30,37 @@
     size: 24pt,
   ),
 
-  text(
-    lang: "ko",
-    align(
-      right,
-    )[잘 설계된 도구를 탐구하고, 도구가 사용자에게 더 잘 전달될 수 있도록 개선하는 방법을 고민합니다.\ 그런 제품을 만들기 위한 팀의 가치를 이해하고, 개선할 수 있는 부분을 찾아 함께 발전시켜 나갑니다.],
-    size: 10pt,
+  table(
+    align: horizon,
+    column-gutter: (0pt, 1em, 0pt, 0pt),
+    columns: (auto,) * 5,
+    stroke: none,
+
+    [*전화번호*],
+    [+82 10-3872-0535],
+    [#box(image("icons/linkedin.svg", height: 1em, width: 1em))],
+    [*LinkedIn*],
+    [#link("https://www.linkedin.com/in/junyeongheo/")[\@junyeongheo]],
+
+    [*이메일*],
+    [yeong.heo\@outlook.com],
+    [#box(image("icons/github.svg", height: 1em, width: 1em))],
+    [*GitHub*],
+    [#link("https://github.com/junyeongh")[\@junyeongh]],
   ),
 )
 
-#table(
-  align: horizon,
-  column-gutter: (0pt, 1em, 0pt, 0pt),
-  columns: (auto,) * 5,
-  stroke: none,
-
-  [*전화번호*],
-  [+82 10-3872-0535],
-  [#box(image("icons/linkedin.svg", height: 1em, width: 1em))],
-  [*LinkedIn*],
-  [#link("https://www.linkedin.com/in/junyeongheo/")[\@junyeongheo]],
-
-  [*이메일*],
-  [yeong.heo\@outlook.com],
-  [#box(image("icons/github.svg", height: 1em, width: 1em))],
-  [*GitHub*],
-  [#link("https://github.com/junyeongh")[\@junyeongh]],
-)
-
 #divider
-= 자기 소개
+// = 자기 소개
 
-#text(
-  size: 10pt,
-  [
-    좋은 도구를 만들기 위해 다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정을 즐깁니다. 그 과정에서 일어나는 여러 층위의 문제를 해결하며 지적 즐거움을 느낍니다. 동시에 같은 즐거움을 나눌 수 있는 사람들의 서로 다른 관점과 새로운 지식을 배워 나가며 함께 성장하는 것에 열정적입니다.
+// #text(
+//   size: 10pt,
+//   [
+//     좋은 도구를 만들기 위해 다양한 추상화 단계를 넘나들며 기술적 깊이를 쌓아가는 과정을 즐깁니다. 그 과정에서 일어나는 여러 층위의 문제를 해결하며 지적 즐거움을 느낍니다. 동시에 같은 즐거움을 나눌 수 있는 사람들의 서로 다른 관점과 새로운 지식을 배워 나가며 함께 성장하는 것에 열정적입니다.
 
-    저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 구조 설계와 개발 환경 일관성을 확립하고, 기술적 결정의 배경을 팀과 공유해 온 경험을 바탕으로, 궁극적으로는 개발 사이클 전반에서 프로젝트 아키텍처부터 개발 환경·인프라까지 고려해 팀의 반복 작업을 줄이는 개발자가 되고자 합니다.
-  ],
-)
+//     저의 강점은 프로젝트의 확장성과 재현성을 고려한 구조 설계에 있습니다. 프로젝트 구조 설계와 개발 환경 일관성을 확립하고, 기술적 결정의 배경을 팀과 공유해 온 경험을 바탕으로, 궁극적으로는 개발 사이클 전반에서 프로젝트 아키텍처부터 개발 환경·인프라까지 고려해 팀의 반복 작업을 줄이는 개발자가 되고자 합니다.
+//   ],
+// )
 
 // == 관심사
 // - 개발 경험 (DX) 개선: 개발 환경 및 인프라의 선언적 환경 구축 - Nix, IaC
@@ -116,7 +109,18 @@
 - AWS 클라우드 환경에서 AI 영상 분석을 위한 차량 센서 및 위치 데이터 전처리
 - 셀룰러 네트워크를 통해 센서 및 영상 데이터를 AWS S3 버킷으로 직접 스트리밍하는 시스템 구축
 
-// #pagebreak()
+#divider
+
+= 학력
+
+*홍콩 성시대학교* #h(1fr) 홍콩\
+전기공학부 컴퓨터·데이터공학 학사 #h(1fr) 2019년 9월 - 2025년 6월\
+_이수 과목: 클라우드 컴퓨팅 시스템, 데이터베이스 시스템, 빅데이터, 인간-컴퓨터 상호작용_\
+*밴더빌트 대학교* #h(1fr) 미국 테네시주 내슈빌\
+공과대학 교환학생 #h(1fr) 2024년 1월 - 2024년 5월\
+_이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 언어론_
+
+#pagebreak()
 = 프로젝트
 
 *RunFit* #h(0.5em) #link("https://run-fit-eight.vercel.app/")[#box(image("icons/house.svg", height: 1em, width: 1em))] #h(0.5em) #link("https://github.com/fesi12-team1/run-fit/")[#box(image("icons/github.svg", height: 1em, width: 1em))] #h(1fr) 2025년 12월 - 2026년 1월\
@@ -149,21 +153,11 @@
 // - TanStack Query로 NestJS 백엔드 API 연동 및 실시간 데이터 동기화 처리
 // - 푸시 알림과 다국어(i18n) 지원을 갖춘 크로스 플랫폼 UI 구현
 
-= 학력
+// #pagebreak()
+// = 기타 활동
 
-*홍콩 성시대학교* #h(1fr) 홍콩\
-전기공학부 컴퓨터·데이터공학 학사 #h(1fr) 2019년 9월 - 2025년 6월\
-_이수 과목: 클라우드 컴퓨팅 시스템, 데이터베이스 시스템, 빅데이터, 인간-컴퓨터 상호작용_\
-*밴더빌트 대학교* #h(1fr) 미국 테네시주 내슈빌\
-공과대학 교환학생 #h(1fr) 2024년 1월 - 2024년 5월\
-_이수 과목: 응용 머신러닝, 인공지능, FPGA 설계, 프로그래밍 언어론_
-
-#divider
-
-= 기타 활동
-
-*프론트엔드 단기 집중 과정 - codeit* #h(1fr) 2025년 11월 - 2026년 1월\
-- Jest·React Testing Library·CI/CD·Next.js 아키텍처를 다루는 10주 집중 과정 수료
-- 코드 컨벤션·PR 템플릿·협업 리뷰 프로세스를 정의하며 4인 팀 개발 워크플로우 주도
-*데이터 사이언스 코칭 스터디: 2024 - boostcourse* #h(1fr) 2024년 7월 - 2024년 8월\
-- pandas·numpy·matplotlib 등 파이썬 데이터 분석 4주 과정 수료; KOSIS 실데이터 기반 분석 실습
+// *프론트엔드 단기 집중 과정 - codeit* #h(1fr) 2025년 11월 - 2026년 1월\
+// - Jest·React Testing Library·CI/CD·Next.js 아키텍처를 다루는 10주 집중 과정 수료
+// - 코드 컨벤션·PR 템플릿·협업 리뷰 프로세스를 정의하며 4인 팀 개발 워크플로우 주도
+// *데이터 사이언스 코칭 스터디: 2024 - boostcourse* #h(1fr) 2024년 7월 - 2024년 8월\
+// - pandas·numpy·matplotlib 등 파이썬 데이터 분석 4주 과정 수료; KOSIS 실데이터 기반 분석 실습
