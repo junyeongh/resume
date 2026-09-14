@@ -1,15 +1,27 @@
-compile-en:
+# English
+watch:
+  typst watch resume.typ
+
+export:
   #!/usr/bin/env bash
   year=$(date +%Y)
-  typst compile en.typ "Resume - Junyeong Heo ($year).pdf"
+  typst compile resume.typ "Resume - Junyeong Heo ($year).pdf"
 
-watch-en:
-  typst watch en.typ
+compile:
+  #!/usr/bin/env bash
+  year=$(date +%Y)
+  typst compile resume.typ en.pdf
+
+# Korean
+watch-kr:
+  typst watch resume-kr.typ
+
+export-kr:
+  #!/usr/bin/env bash
+  year=$(date +%Y)
+  typst compile resume-kr.typ "[허준영] 이력서 ($year).pdf"
 
 compile-kr:
   #!/usr/bin/env bash
   year=$(date +%Y)
-  typst compile kr.typ "[허준영] 이력서 ($year).pdf"
-
-watch-kr:
-  typst watch kr.typ
+  typst compile resume-kr.typ kr.pdf
